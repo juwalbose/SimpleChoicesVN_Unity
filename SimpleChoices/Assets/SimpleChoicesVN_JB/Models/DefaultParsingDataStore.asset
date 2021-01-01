@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10da3b9e257bc14cab81db7d0a45357, type: 3}
+  m_Name: DefaultParsingDataStore
+  m_EditorClassIdentifier: 
+  directiveEnum:
+  - variableName: location
+    value: '|LOCATION|'
+  - variableName: choice
+    value: '|CHOICE|'
+  - variableName: branch
+    value: '|GOTO|'
+  - variableName: check
+    value: '|IF|'
+  - variableName: label
+    value: '|LABEL'
+  - variableName: item
+    value: '|ITEM|'
+  directiveDelimiter: '|'
+  variableTag: $
+  variationTag: _
+  separationTag: ':'
+  thoughtTag: '!'
+  expSeparationTag: '*'
+  inventoryTag: INV

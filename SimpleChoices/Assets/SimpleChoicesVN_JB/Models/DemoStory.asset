@@ -1,0 +1,570 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7494960263528709341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f0b3339e70ec2429b2b1efb2da72e1, type: 3}
+  m_Name: Story
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -664, y: -632}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -7494960263528709341}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -7494960263528709341}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -3732734583510941931}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &-5218316595675888532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d21a02c0c07fd4488d22ff2ff2901ca, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -168, y: 24}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -5218316595675888532}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: 1577732186403598012}
+        reroutePoints: []
+      - fieldName: fail
+        node: {fileID: -3732734583510941931}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -5218316595675888532}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 8146392699539992602}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  selectedCharacter: {fileID: 11400000, guid: ba0d711ba856b004c93c8bfbec9d37d3, type: 2}
+  characterMood: {fileID: 11400000, guid: 62cc2703f72f3e848a13fe178c27cab6, type: 2}
+  dialogText: Lucy says stuff
+--- !u!114 &-3984272827617135151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec8ffc0d210d894d9bade7c3f649794, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -152, y: -744}
+  ports:
+    keys:
+    - answers
+    - enter
+    - exit
+    - answers 0
+    - answers 1
+    - answers 2
+    values:
+    - _fieldName: answers
+      _node: {fileID: -3984272827617135151}
+      _typeQualifiedName: System.Collections.Generic.List`1[[System.String, mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: enter
+      _node: {fileID: -3984272827617135151}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -3732734583510941931}
+        reroutePoints: []
+      - fieldName: pass
+        node: {fileID: -3732734583510941931}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -3984272827617135151}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: answers 0
+      _node: {fileID: -3984272827617135151}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: enter
+        node: {fileID: 8102650689924087667}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: answers 1
+      _node: {fileID: -3984272827617135151}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: enter
+        node: {fileID: 3672869205391786672}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: answers 2
+      _node: {fileID: -3984272827617135151}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: enter
+        node: {fileID: 3672869205391786672}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  answers:
+  - one
+  - two
+  - three
+  choiceText: Some choice
+--- !u!114 &-3732734583510941931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487cee69695ea334186651d35de0f865, type: 3}
+  m_Name: Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -568, y: -328}
+  ports:
+    keys:
+    - enter
+    - exit
+    - pass
+    - fail
+    values:
+    - _fieldName: enter
+      _node: {fileID: -3732734583510941931}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -7494960263528709341}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -3732734583510941931}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -3984272827617135151}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: pass
+      _node: {fileID: -3732734583510941931}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -3984272827617135151}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: fail
+      _node: {fileID: -3732734583510941931}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -5218316595675888532}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  checkItem: {fileID: 11400000, guid: e9d3b07bbb4ff95449c7e84fc1492ac8, type: 2}
+  variableName: obtainedKey
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2e43ff04d083c4a95a9b3bb92a3417, type: 3}
+  m_Name: DemoStory
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 1577732186403598012}
+  - {fileID: -5218316595675888532}
+  - {fileID: 8146392699539992602}
+  - {fileID: 2810394957061701905}
+  - {fileID: 3672869205391786672}
+  - {fileID: -7494960263528709341}
+  - {fileID: -3984272827617135151}
+  - {fileID: 8102650689924087667}
+  - {fileID: -3732734583510941931}
+  - {fileID: 4678981159615119278}
+  current: {fileID: -5218316595675888532}
+  storyName: Demo Test
+  characters:
+  - {fileID: 11400000, guid: 0afdac81404f54843a90656f0431f0cd, type: 2}
+  - {fileID: 11400000, guid: dc40365f23e59394aa86e5ed4db2735f, type: 2}
+  - {fileID: 11400000, guid: dc40365f23e59394aa86e5ed4db2735f, type: 2}
+  locations:
+  - {fileID: 11400000, guid: a3bbfca97ca5b424a8bd483187ffc045, type: 2}
+  - {fileID: 11400000, guid: 452d372716f08ea478aa5d0517edaafa, type: 2}
+  inventoryItems:
+  - {fileID: 11400000, guid: 1e3c7a8a4e1260843bfa5f6bbf12c857, type: 2}
+  - {fileID: 11400000, guid: e9d3b07bbb4ff95449c7e84fc1492ac8, type: 2}
+  characterExpressions:
+  - {fileID: 11400000, guid: 3686fd874ce055b40b8cc7a43382e03d, type: 2}
+  - {fileID: 11400000, guid: 62cc2703f72f3e848a13fe178c27cab6, type: 2}
+  - {fileID: 11400000, guid: 9f47f47032a8e374f8b733784ec578e4, type: 2}
+  - {fileID: 11400000, guid: e7f53f97a13d3f549b46343f7cb955bf, type: 2}
+  - {fileID: 11400000, guid: 1560b3148b5b3244d8b411b5669114a1, type: 2}
+  storyVariableStore: {fileID: 11400000, guid: eabf78f4bac072d418f3eb6defa34011, type: 2}
+  parsingDataStore: {fileID: 11400000, guid: 808f802746cfd0e41aaca3202d4ea62c, type: 2}
+  defaultExpression: {fileID: 11400000, guid: 9f47f47032a8e374f8b733784ec578e4, type: 2}
+  defaultCharacter: {fileID: 11400000, guid: 0afdac81404f54843a90656f0431f0cd, type: 2}
+  currentLocation: {fileID: 11400000, guid: a3bbfca97ca5b424a8bd483187ffc045, type: 2}
+--- !u!114 &1577732186403598012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d21a02c0c07fd4488d22ff2ff2901ca, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 200, y: -248}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 1577732186403598012}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: 2810394957061701905}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 1577732186403598012}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: -5218316595675888532}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  selectedCharacter: {fileID: 11400000, guid: 0afdac81404f54843a90656f0431f0cd, type: 2}
+  characterMood: {fileID: 11400000, guid: 9f47f47032a8e374f8b733784ec578e4, type: 2}
+  dialogText: Narrator says stuff
+--- !u!114 &2810394957061701905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659a0e5457ccfb94f9a1a4b7656dab63, type: 3}
+  m_Name: Location
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 248, y: -424}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 2810394957061701905}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: 3672869205391786672}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 8102650689924087667}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 2810394957061701905}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 1577732186403598012}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  newLocation: {fileID: 11400000, guid: a3bbfca97ca5b424a8bd483187ffc045, type: 2}
+--- !u!114 &3672869205391786672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f0b3339e70ec2429b2b1efb2da72e1, type: 3}
+  m_Name: Story
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -152, y: -280}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 3672869205391786672}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 1
+        node: {fileID: -3984272827617135151}
+        reroutePoints: []
+      - fieldName: answers 2
+        node: {fileID: -3984272827617135151}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 3672869205391786672}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 2810394957061701905}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+--- !u!114 &4678981159615119278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e024e70258b35f94da376a3b32feebf9, type: 3}
+  m_Name: Set Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: -72}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 4678981159615119278}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 4678981159615119278}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  variableName: collapse
+--- !u!114 &8102650689924087667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55655dce51848a34ba74d7fb56009f14, type: 3}
+  m_Name: Item
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 229.79062, y: -607.0767}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 8102650689924087667}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: answers 0
+        node: {fileID: -3984272827617135151}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 8102650689924087667}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: enter
+        node: {fileID: 2810394957061701905}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  newItem: {fileID: 11400000, guid: 1e3c7a8a4e1260843bfa5f6bbf12c857, type: 2}
+--- !u!114 &8146392699539992602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d21a02c0c07fd4488d22ff2ff2901ca, type: 3}
+  m_Name: Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 200, y: -8}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 8146392699539992602}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit
+        node: {fileID: -5218316595675888532}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 8146392699539992602}
+      _typeQualifiedName: SimpleChoicesVN_JB.StoryNode+Empty, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  selectedCharacter: {fileID: 11400000, guid: dc40365f23e59394aa86e5ed4db2735f, type: 2}
+  characterMood: {fileID: 11400000, guid: e7f53f97a13d3f549b46343f7cb955bf, type: 2}
+  dialogText: Sam responds something
